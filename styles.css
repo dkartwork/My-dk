@@ -1,0 +1,105 @@
+/* Container สำหรับสไลด์ */
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+/* แถบสไลด์ที่เปลี่ยนภาพ */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* สไลด์แต่ละภาพ */
+.slide {
+    min-width: 100%;
+    position: relative; /* ให้ caption อยู่บนภาพ */
+}
+
+/* รูปภาพในสไลด์ */
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* แคปชั่นที่อยู่บนภาพ */
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ปุ่มนำทาง (prev และ next) */
+.navigation {
+    display: flex;
+    justify-content: space-between; /* ปุ่มอยู่ขอบซ้ายและขวา */
+    align-items: center; /* จัดกลางแนวตั้ง */
+    position: absolute;
+    top: 50%; /* วางกลางแนวตั้ง */
+    width: 100%;
+    transform: translateY(-50%); /* ให้ตำแหน่งกลางแนวตั้ง */
+    pointer-events: none;
+}
+
+/* ปุ่ม prev และ next */
+.navigation button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 50px; /* ขนาดกว้างของปุ่ม */
+    height: 50px; /* ขนาดสูงของปุ่ม */
+    border-radius: 50%; /* ทำให้ปุ่มเป็นรูปวงกลม */
+    display: flex;
+    align-items: center; /* จัดกลางแนวตั้ง */
+    justify-content: center; /* จัดกลางแนวนอน */
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 10; /* ให้ปุ่มอยู่ด้านบนของสไลด์ */
+    position: absolute;
+}
+
+/* ปุ่ม prev และ next อยู่ทางซ้ายและขวาของภาพ */
+#prev {
+    left: 10px; /* ขนาดระยะห่างจากขอบซ้าย */
+}
+
+#next {
+    right: 10px; /* ขนาดระยะห่างจากขอบขวา */
+}
+
+
+/* แสดงจำนวนหน้าเป็นจุด */
+.dots-container {
+    display: flex;
+    justify-content: center; /* จัดกลางแนวนอน */
+    position: relative;
+    padding: 10px 0; /* ระยะห่างด้านบนและล่าง */
+    background-color: #fff; /* ให้พื้นหลังของ dots เป็นสีขาว */
+}
+
+.dots {
+    display: flex;
+    gap: 10px; /* ระยะห่างระหว่าง dots */
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
